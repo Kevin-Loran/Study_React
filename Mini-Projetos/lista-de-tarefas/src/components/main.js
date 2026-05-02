@@ -11,23 +11,37 @@ import './main.css'
 export default class Main extends Component {
         state = {
             novatarefa: '',
-            tarefas: []
+            tarefas: [],
+            index: -1,
         };
 
 
     handleSubmit= (e) => {
         e.preventDefault();
-        const { tarefas } = this.state;
+        const { tarefas, index } = this.state;
         let { novatarefa } = this.state;
         novatarefa = novatarefa.trim();
 
-        if(tarefas.indexOf(novatarefa) !== -1) return;
+        if(tarefas.indexOf(novatarefa) !== -1 && index === -1) return;
+        if(novatarefa === '') return;
 
         const novatarefas = [ ...tarefas];
 
-        this.setState({
+        if(index === -1){
+            this.setState({
             tarefas: [ ...novatarefas, novatarefa],
-        });
+            novatarefa: '',
+            });
+        } else {
+            novatarefas[index] = novatarefa;
+       
+            this.setState({
+                tarefas: [ ...novatarefas],
+                index: -1,
+                novatarefa: '',
+            });
+        }
+
     }
     
     
@@ -38,7 +52,12 @@ export default class Main extends Component {
     }
     
     handleEdit= (e, index) => {
-        console.log(e, index)
+        const { tarefas } = this.state;
+
+        this.setState({
+            index,
+            novatarefa: tarefas[index],
+        });
     }
   
     handleDelete= (e, index) => {
