@@ -1,8 +1,14 @@
 import Login from "./pages";
+import GlobalStyles from "./styles/GlobalStyles";
+import Header from "./components/Header";
 
 function App() {
   return (
-   <Login />
+    <>
+    <Header />
+    <Login />
+    <GlobalStyles />
+    </>
   );
 }
 
