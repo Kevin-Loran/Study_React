@@ -13,6 +13,7 @@ export default function Login(){
         </ Title>
         <Paragrafo> alguma coisa muito bonita </Paragrafo>
         <a href=''>OIie</a>
+        <button type='button'>Enviar</button>
       </ Conteiner>
     )
 }
