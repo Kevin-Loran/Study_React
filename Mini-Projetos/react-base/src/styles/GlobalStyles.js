@@ -15,7 +15,7 @@ body {
     font-family: sans-serif;
     background: #eee;
     background: ${primaryDarkColor};
-    color: ${primaryDarkColor}
+    color: #fff
 }
 
 html, body, #root {
