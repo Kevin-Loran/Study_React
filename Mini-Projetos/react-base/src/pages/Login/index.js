@@ -8,7 +8,7 @@ import { Title, Paragrafo } from './styled'
 export default function Login(){
     return (
         <Conteiner>
-        <Title isRed={false}>
+        <Title $isRed={false}>
            Login
            <small>Oie</small>
         </ Title>

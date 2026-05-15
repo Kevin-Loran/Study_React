@@ -1,7 +1,7 @@
 import { Nav } from "./styled";
 import { FaHome, faHome, FaSignInAlt, FaUserAlt } from 'react-icons/fa'
 
-import { Link } from "react-router-dom/cjs/react-router-dom.min";
+import { Link } from "react-router-dom";
 
 export default function Header() {
     return (

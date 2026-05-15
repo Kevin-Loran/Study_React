@@ -11,7 +11,7 @@ export default function Routes() {
     return (
         <Switch>
           <Route exact path='/login' component={Login} />
-          <Route path='*' component={page404} />
+          <Route exact path='*' component={page404} />
         </Switch>
     );
 }
