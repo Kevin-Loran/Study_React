@@ -1,19 +1,22 @@
 import React from 'react';
+import { useDispatch } from 'react-redux';
 
 import { Conteiner } from '../../styles/GlobalStyles';
 import { Title, Paragrafo } from './styled'
 
-import axios from '../../services/axios';
+
 
 export default function Login(){
-  React.useEffect(() => {
-    async function getDate() {
-      const response = await axios.get('/alunos');
-      console.log(response);
-    }
-    
-    getDate();
-  }, [])
+  const dispatch = useDispatch();
+
+  function handleClick(e) {
+    e.preventDefault();
+
+    dispatch({
+      type: 'BOTAO_CLICADO',
+    });
+
+  }
 
     return (
         <Conteiner>
@@ -23,7 +26,7 @@ export default function Login(){
         </ Title>
         <Paragrafo> alguma coisa muito bonita </Paragrafo>
         <a href=''>OIie</a>
-        <button type='button'>Enviar</button>
+        <button type='button' onClick={handleClick}>Enviar</button>
       </ Conteiner>
     )
 }
