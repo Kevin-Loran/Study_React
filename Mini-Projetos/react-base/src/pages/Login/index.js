@@ -1,11 +1,20 @@
 import React from 'react';
-import styled from 'styled-components';
 
 import { Conteiner } from '../../styles/GlobalStyles';
-
 import { Title, Paragrafo } from './styled'
 
+import axios from '../../services/axios';
+
 export default function Login(){
+  React.useEffect(() => {
+    async function getDate() {
+      const response = await axios.get('/alunos');
+      console.log(response);
+    }
+    
+    getDate();
+  }, [])
+
     return (
         <Conteiner>
         <Title $isRed={false}>
