@@ -1,10 +1,10 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
 
+
 import { Conteiner } from '../../styles/GlobalStyles';
 import { Title, Paragrafo } from './styled';
-import * as exampleActions from '../../store/modules/example/actions'
-
+import * as exampleActions from '../../store/modules/example/actions';
 
 
 export default function Login(){
@@ -13,7 +13,7 @@ export default function Login(){
   function handleClick(e) {
     e.preventDefault();
 
-    dispatch(exampleActions.clicaBotao());
+   dispatch(exampleActions.clicaBotaoRequest());
 
   }
 
@@ -24,7 +24,6 @@ export default function Login(){
            <small>Oie</small>
         </ Title>
         <Paragrafo> alguma coisa muito bonita </Paragrafo>
-        <a href=''>OIie</a>
         <button type='button' onClick={handleClick}>Enviar</button>
       </ Conteiner>
     )
